@@ -1,0 +1,32 @@
+.mi-card {
+    border: 1px solid white;
+    width: 100%;
+    height: 32vh;
+    border-radius: 0 !important;
+    margin-bottom: 5%;
+}
+
+.mi-card-item {
+    text-transform: capitalize;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.mi-card-price {
+    text-align: center;
+}
+
+.mi-card-description {
+
+}
+
+.mi-card-img {
+    width: 100%;
+    height: 220px;
+
+    object {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,98 @@
+.mim {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    padding: 5% 0%;
+}
+
+.mim-content {
+    border: 1px solid #888;
+  width: 30%;
+  height: 85vh;
+  margin: auto;
+  background-color: #fefefe;
+  position: relative;
+//   top: 20%;
+//   padding: 2%;
+
+}
+
+.mim-img {
+    // border: 1px dashed black;
+    width: 100%;
+    height: 45%;
+    background-size: cover;
+    margin-bottom: 3%;
+}
+
+.mim-close-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2.5rem;
+    padding-top: 2%;
+    padding-right: 2%;
+}
+
+.mim-item {
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.mim-instructions-label {
+    width: 100%;
+    background: lightgrey;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mim-input {
+    width: 100%;
+    border: none;
+    height: 25%;
+    border-bottom: 1px solid lightgrey;
+    padding-left: 5%;
+    margin-bottom: 4%;
+}
+
+.mim-btn-div {
+    // border: 1px dashed black;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.mim-count-div {
+    // border: 1px dashed black;
+    display: flex;
+    width: 18%;
+    justify-content: space-between;
+
+}
+
+.mim-count-icon {
+    // border: 1px dashed black;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.mim-submit-btn {
+    width: 80%;
+    border: none;
+    height: 5vh;
+    color: #fff;
+    background: #000;
+    // font-size: 1.2rem;
+}
