@@ -9,9 +9,7 @@ export const getAllMenuItems = async () => {
   let menu = {
     entrees: response.data.filter((item) => item.category === "entree"),
     sides: response.data.filter((item) => item.category === "side"),
-    dessert: response.data.filter(
-      (item) => item.dinner_or_dessert === "dessert"
-    ),
+    dessert: response.data.filter((item) => item.category === "dessert"),
   };
   return menu;
 };

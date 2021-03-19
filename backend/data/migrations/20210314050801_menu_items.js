@@ -8,8 +8,6 @@ exports.up = function (knex) {
 
     tbl.decimal("price", null).notNullable();
 
-    tbl.string("dinner_or_dessert").notNullable();
-
     tbl.string("category");
 
     tbl.string("image", 255);

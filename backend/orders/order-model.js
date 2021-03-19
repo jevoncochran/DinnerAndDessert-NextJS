@@ -7,6 +7,7 @@ module.exports = {
   addOrderDetails,
   findOrderDetailsById,
   displayOrder,
+  getOutstandingOrders,
 };
 
 function getAllOrders() {
@@ -65,10 +66,32 @@ function displayOrder(id) {
       "o.method",
       "o.address",
       "o.phone_number",
+      "o.status",
       "mi.item",
       "od.quantity"
     )
     .join("order_details as od", "o.id", "od.order_id")
     .join("menu_items as mi", "od.item_id", "mi.id")
     .where("o.id", id);
+}
+
+// function getOutstandingOrders() {
+//   return db("orders");
+// .select(
+//   "o.id as order_id",
+//   "o.customer",
+//   "o.date",
+//   "o.method",
+//   "o.address",
+//   "o.phone_number",
+//   "o.status",
+//   "mi.item",
+//   "od.quantity"
+// )
+// .join("order_details as od", "o.id", "od.order_id")
+// .join("menu_items as mi", "od.item_id", "mi.id");
+// }
+
+function getOutstandingOrders() {
+  return db("orders");
 }
