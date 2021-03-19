@@ -1,10 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./PayPal.module.scss";
 import { connect } from "react-redux";
+import { useRouter } from "next/router";
 
 import { addOrder } from "../../../redux/actions";
 
 const PayPal = (props) => {
+  const router = useRouter();
   const paypal = useRef();
 
   useEffect(() => {
@@ -27,8 +29,11 @@ const PayPal = (props) => {
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
           console.log(order);
-          props.addOrder(props.order_details, props.order);
-          props.history.push("/success");
+          props.addOrder(
+            { ...props.order_details, status: "placed" },
+            props.order
+          );
+          router.push("/order");
         },
         onError: (err) => {
           console.log(err);

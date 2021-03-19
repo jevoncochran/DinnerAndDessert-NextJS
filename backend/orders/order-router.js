@@ -58,6 +58,19 @@ router.post("/details", (req, res) => {
     });
 });
 
+router.get("/outstanding", (req, res) => {
+  orders
+    .getOutstandingOrders()
+    .then((o) => res.status(200).json(o))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "A server error has occurred" });
+    });
+
+  console.log("outstanding orders ran");
+  res.status(418).json({ test: "yes" });
+});
+
 router.get("/:orderId/display", (req, res) => {
   const { orderId } = req.params;
 
@@ -70,6 +83,8 @@ router.get("/:orderId/display", (req, res) => {
       console.log(err);
       res.status(500).json({ error: "A server error has occurred" });
     });
+
+  console.log("order display ran");
 });
 
 module.exports = router;

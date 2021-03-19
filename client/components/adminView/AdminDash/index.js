@@ -9,10 +9,13 @@ import { changeItemPic } from "./functions/changeItemPic";
 import axios from "axios";
 import { indicateMenuChange } from "../../../redux/actions";
 import { connect } from "react-redux";
+import { useRouter } from "next/router";
 
 // const client = new W3CWebSocket("ws://127.0.0.1:8000");
 
 const AdminDash = (props) => {
+  const router = useRouter();
+
   const [menu, setMenu] = useState({
     entrees: [],
     sides: [],
@@ -25,8 +28,11 @@ const AdminDash = (props) => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => {
+  const [newItemCategory, setNewItemCategory] = useState("");
+
+  const openModal = (modalCategory) => {
     setShowModal(true);
+    setNewItemCategory(modalCategory);
   };
 
   const closeModal = () => {
@@ -90,30 +96,33 @@ const AdminDash = (props) => {
   return (
     <div className={styles.ad}>
       <h1 className={styles["ad-headline"]}>Admin Dashboard</h1>
-      <button onClick={() => props.history.push("/admin/orders")}>
+      <button onClick={() => router.push("/admin/orders")}>
         Go To Orders
       </button>
       <h2 style={{ textAlign: "center" }}>Menu Options</h2>
       <MenuCategorySection
         title="Entrees"
+        category="entree"
         openModal={openModal}
-        category={menu.entrees}
+        categoryArray={menu.entrees}
         editDayAvailability={editDayAvailability}
         inputClick={inputClick}
       />
 
       <MenuCategorySection
         title="Sides"
+        category="side"
         openModal={openModal}
-        category={menu.sides}
+        categoryArray={menu.sides}
         editDayAvailability={editDayAvailability}
         inputClick={inputClick}
       />
 
       <MenuCategorySection
         title="Dessert"
+        category="dessert"
         openModal={openModal}
-        category={menu.dessert}
+        categoryArray={menu.dessert}
         editDayAvailability={editDayAvailability}
         inputClick={inputClick}
       />
@@ -129,7 +138,11 @@ const AdminDash = (props) => {
       />
 
       {showModal && (
-        <NewItemModal openModal={openModal} closeModal={closeModal} />
+        <NewItemModal
+          openModal={openModal}
+          closeModal={closeModal}
+          newItemCategory={newItemCategory}
+        />
       )}
     </div>
   );

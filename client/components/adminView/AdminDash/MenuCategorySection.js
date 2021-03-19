@@ -6,19 +6,19 @@ import MenuItemCard from "./MenuItemCard";
 const MenuCategorySection = (props) => {
   return (
     <div className={styles["ad-menu-category-section"]}>
-      {props.category.length > 0 && (
+      {props.categoryArray.length > 0 && (
         <div className={styles["cur-menu-category-container"]}>
           <div className={styles["ad-menu-category-label-div"]}>
             <h3 className={styles["ad-menu-label"]}>{props.title}</h3>
             <div
               className={styles["ad-menu-category-add-icon"]}
-              onClick={props.openModal}
+              onClick={() => props.openModal(props.category)}
             >
               <RiAddBoxFill />
             </div>
           </div>
           <Grid container spacing={2}>
-            {props.category.map((item) => (
+            {props.categoryArray.map((item) => (
               <MenuItemCard
                 item={item}
                 inputClick={props.inputClick}

@@ -14,6 +14,7 @@ exports.seed = function (knex) {
       tax: 1.5,
       total: 31.5,
       phone_number: "5104248976",
+      status: "completed",
     },
     {
       customer: "Tanya Smith",
@@ -25,6 +26,7 @@ exports.seed = function (knex) {
       total: 37.68,
       phone_number: "3139763456",
       address: "17320 Pembroke Ave, Detroit, MI 48235",
+      status: "completed",
     },
     {
       customer: "Rajan Bradley",
@@ -35,6 +37,7 @@ exports.seed = function (knex) {
       tax: 1.2,
       total: 25.2,
       phone_number: "5104248976",
+      status: "completed",
     },
     {
       customer: "Lisa Latham",
@@ -45,6 +48,7 @@ exports.seed = function (knex) {
       tax: 1.8,
       total: 35.8,
       phone_number: "3134862345",
+      status: "completed",
     },
   ]);
   // });

@@ -19,6 +19,8 @@ exports.up = function (knex) {
     tbl.string("address", 255);
 
     tbl.string("phone_number").notNullable();
+
+    tbl.string("status").notNullable();
   });
 };
 

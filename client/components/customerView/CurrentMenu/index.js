@@ -36,9 +36,7 @@ const CurrentMenu = (props) => {
           entrees: res.data.filter((item) => item.category === "entree"),
           sides: res.data.filter((item) => item.category === "side"),
           extras: res.data.filter((item) => item.category === "extra"),
-          dessert: res.data.filter(
-            (item) => item.dinner_or_dessert === "dessert"
-          ),
+          dessert: res.data.filter((item) => item.category === "dessert"),
         });
       })
       .catch((err) => {
